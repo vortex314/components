@@ -100,8 +100,11 @@ CborReader& CborReader::get(uint32_t &ui) {
 	return *this;
 }
 
-CborReader& CborReader::get(int64_t &v) {
-	if (_error == CborNoError) _error = cbor_value_get_int64(_value, &v);
+	CborReader& get(uint64_t &v) ;
+
+
+CborReader& CborReader::get(bool &v) {
+	if (_error == CborNoError) _error = cbor_value_get_boolean(_value, &v);
 	if (!_error) _error = cbor_value_advance_fixed(_value);
 	return *this;
 }

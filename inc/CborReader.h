@@ -31,6 +31,7 @@ public:
 	CborReader& fill(const Bytes &bs) ;
 	CborReader& array() ;
 	CborReader& close() ;
+	CborReader& get(bool &v) ;
 	CborReader& get(uint64_t &v) ;
 	CborReader& get(int64_t &v);
 	CborReader& get(int16_t &v);
